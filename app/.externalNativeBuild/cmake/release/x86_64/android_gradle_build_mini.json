@@ -1,0 +1,18 @@
+{
+  "buildFiles": [
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "G:\\Barak\\moishi\\moneytiser\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe --build G:\\Barak\\moishi\\moneytiser\\app\\.externalNativeBuild\\cmake\\release\\x86_64 --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-x86_64": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe --build G:\\Barak\\moishi\\moneytiser\\app\\.externalNativeBuild\\cmake\\release\\x86_64 --target native-lib",
+      "abi": "x86_64",
+      "output": "G:\\Barak\\moishi\\moneytiser\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64\\libnative-lib.so"
+    }
+  }
+}

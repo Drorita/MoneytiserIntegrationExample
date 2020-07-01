@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Android | Moneytiser SDK Documentation</title>
+        
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta name="title" content="Android SDK to build apps powered by Moneytiser">
+        <link rel="icon" href="https://appchamp.io/wp-content/uploads/2018/10/cropped-cup-1-32x32.png" sizes="32x32">
+        <link rel="icon" href="https://appchamp.io/wp-content/uploads/2018/10/cropped-cup-1-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="https://appchamp.io/wp-content/uploads/2018/10/cropped-cup-1-180x180.png">
+        <meta name="msapplication-TileImage" content="https://appchamp.io/wp-content/uploads/2018/10/cropped-cup-1-270x270.png">        
+        <link href="./css/css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="./css/jquery-ui.css">
+        <link type="text/css" rel="stylesheet" href="./css/main.css">
+    </head>
+<body>
+<header class="header">
+    <div class="logo">
+        <a href="#">
+            <img alt="logo" src="https://appchamp.io/wp-content/uploads/2018/10/appchamp.png">
+        </a>
+        <a href="#" class="docLink">Documentation</a>
+    </div>
+    <div class="right-area clearfix">
+        <a class="mob-search"><img src="./images/search-icon.svg"></a>
+        <div class="search">
+            <a class="hide-search">x</a>
+            <div class="s-btn">
+                <img src="./images/search-icon.svg">
+            </div>
+            <form action="#" method="get">
+                <input type="text" name="search" class="input-bx" value="" placeholder="Search Documentation" autocomplete="off">
+            </form>
+        </div>
+    </div>
+</header>
+    
+    <div class="cont-wrapper">
+        <!--main-->
+        <div class="container-fluid">
+            <!--row-->
+            <div class="row">
+                <div class="overlay"></div>
+                
+	<!--content-area-->
+	<div class="col-md-9 content-area">
+		<div class="col-md-8 bread-crumb">
+			<ul><li><a href="#">Home</a></li>
+
+			<li><a href="#">platforms</a></li><li>android</li></ul>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			<h1>Android</h1>
+			<div class="middle-sec">
+				<p><em>Use Moneytiser to power your Android projects</em>
+</p><p>Create Android-based applications and use the Android SDK to create a tunnel with Moneytise servers. The SDK uses Moneytise APIs.
+</p><h2 id="getting-started">Getting Started</h2><p>This guide will help you get started with our Android SDK to build apps powered by Moneytiser.
+</p><h3 id="prerequisites">Prerequisites</h3><p>To get started with Android SDK, you will need one of the following: <a href="https://developer.android.com/studio/install.html" target="_blank">Android Studio</a> or <a href="https://eclipse.org/downloads/eclipse-packages/?show_instructions=TRUE" target="_blank">Eclipse</a>.<br>
+</p><p><span></span>
+</p><h3 id="sdk-installation-and-setup">SDK Installation and Setup<br></h3><p>To add the Moneytiser Android SDK to your existing project, perform the steps given below:
+</p><ol>
+	<li><a href="/platforms/android/android_sdk_latest">Download the Android SDK</a> and extract the ZIP file to your local disk.</li>
+	<li>Add references/dependencies using Android Studio:</li>
+	<p><strong>Android Studio:</strong>
+	</p>
+	<ol>
+		<li>Copy the 'moneytiser-sdk-x.x.x.aar' file into your project's libs folder.</li>
+		<li>Add the dependency code into your 'build.gradle' file.</li>
+		<code class="hljs nginx"><a class="copy-btn"><span></span></a><pre><span class="hljs-title">compile</span> fileTree(dir: <span class="hljs-string">'libs'</span>, include: [<span class="hljs-string">'*.jar'</span>])</pre></code>
+		<li>Configure 'AndroidManifest.xml' with permissions using the following code:</li><code class="hljs xml"><a class="copy-btn"><span></span></a><pre><span class="hljs-comment">&lt;!-- Allows applications to connect network (Required) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">uses-permission</span> <span class="hljs-attribute">android:name</span>=<span class="hljs-value">"android.permission.INTERNET"</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- Allows applications to access information about networks (Required) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">uses-permission</span> <span class="hljs-attribute">android:name</span>=<span class="hljs-value">"android.permission.ACCESS_NETWORK_STATE"</span> /&gt;</span>
+</code>
+	</ol>
+</ol><h3 id="initialize-sdk">Initialize SDK</h3><p>To initialize the SDK, specify <strong>application context</strong> and <strong>the Publisher key</strong> of the stack as shown in the snippet given below:
+</p><code class="hljs cpp"><a class="copy-btn"><span></span></a><pre>Moneytiser <span class="hljs-built_in">m</span> = new Moneytiser.<span class="hljs-built_in">Builder</span>().withPublisher(<span class="hljs-string">"publisher"</span>).build(context);
+</pre></code><p>Once you have initialized the SDK, you can start and stop proxy connection.
+</p>
+
+<h2 id="api-reference">API Reference</h2><p>Go through our SDK API Reference guide to know about the methods that can be used to start and stop proxy connection.
+</p><p><a href="docs/platforms/android/api-reference/">Read Android API Reference Guide</a>
+</p><h2 id="download-sdk">Download SDK<br></h2><p>The Android SDK interacts with and uses our Moneytiser APIs to fetch configuration from Moneytiser. 
+    Download the SDK to use proxy connection. <br>
+</p><p><a href="docs/platforms/android/android_sdk_latest">Download Android SDK</a>
+</p><h2 id="example-apps">Example Apps<br></h2><p>To help you get started, we have created some sample applications that are powered by Moneytiser Android SDK. Click on any of the links below to read the tutorials of the app, view app demo, or download the code from GitLab.<br>
+</p><ul>
+	<li><a href="https://gitlab.com/appchampio/moneytiser-sdk.git" target="_blank">Android example app</a></li>
+</ul>
+				<div class="info-bx clearfix row">
+					
+				</div>
+			</div>
+			
+			
+		</div>
+		<!--right-->
+        <div class="scroll-col" style="top: 50px; height: calc(100vh - 190px); margin-top: 108px;">
+			<ul id="right-sidebar" class="nav nav-stacked">
+		</div>
+		<!--/right-->
+	</div>
+	<!--/content-area-->
+
+
+                <div id="back-top" class="go-top" style="bottom: -45px;">
+                    <img src="./images/top-arrow.png" alt="top-arrow">
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+
+
+    </div>
+    
+
+
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-wrap clearfix">
+            <ul class="footer-menu-wrap">
+                <li>
+                    <a class="inactiveLink" title="Moneytiser" href="#">&nbsp;</a>
+                </li>
+            </ul>
+        </div>
+        <div class="legal-wrap col-md-12">
+            <p>© <script type="text/javascript">document.write(new Date().getFullYear());</script> Moneytise. All rights reserved.</p>
+
+            <ul class="footer-links">
+                <li><a href="/privacy-policy">Privacy</a></li>
+                <li><a href="/terms-of-service">Terms</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<div class="cookie-disclaimer" style="display: none;">
+    <p>Moneytise uses cookies to improve your experience. You may disable them from your browser settings at any time. <a class="close-link" href="javascript:void(0)">Got it</a> or <a href="https://appchamp.io/cookie-policy">learn more</a>.
+    </p>
+    <span class="disclaimer-close"></span>
+</div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="./js/isotope.pkgd.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/highlight.pack.js"></script>
+    <script type="text/javascript" src="./js/lightbox.js"></script>
+    <script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+    <div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.405533939862037"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8962586624927762" width="0" height="0" alt="" src="./js/0"></div>
+    <script type="text/javascript" src="./js/clipboard.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.js"></script>
+
+    <script type="application/javascript">
+        var env = "production";
+    </script>
+
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script>
+        if((window.location.hash)&&(window.location.hash!="")){
+            var hashvalue=window.location.hash;
+            //saconsole.log("tigr:::",entry)
+            
+                var hashUrls=[];
+                if(hashUrls.length>0){
+                    for(i=0;i<hashUrls.length;i++){
+                        if(hashUrls[i]["from"]==hashvalue){
+                            if(hashUrls[i]["to"].startsWith("/")){
+                                window.location=hashUrls[i]["to"]
+                            }else{
+                                if((hashUrls[i]["to"])&&(hashUrls[i]["to"]!="")) {
+                                    window.location.hash = hashUrls[i]["to"]
+                                }else{
+                                    window.location=window.location.href.split('#')[0]
+                                }
+                            }
+
+                        }
+                    }
+                }
+            
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+# ninja log v5
+1	599	612965392	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+602	774	612965392	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+4	868	613233885	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+868	1045	613233885	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+3	468	613235886	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+468	588	613235886	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+3	643	613506116	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+643	783	613506116	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+3	654	613571425	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+654	798	613571425	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+2	522	613841457	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+522	647	613841457	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+2	452	613905435	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+452	572	613905435	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+2	435	613932224	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+435	558	613932224	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+3	445	614175821	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+445	565	614175821	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+3	753	615044478	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+754	914	615044478	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0
+4	939	615197861	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d5d3d793709a9d2
+939	1119	615197862	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	12b411fbfe0afff0

@@ -1,0 +1,20 @@
+Executable : C:\Users\User\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HG:\Barak\moishi\moneytiser\app
+-BG:\Barak\moishi\moneytiser\app\.externalNativeBuild\cmake\debug\x86
+-DANDROID_ABI=x86
+-DANDROID_PLATFORM=android-19
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\Barak\moishi\moneytiser\app\build\intermediates\cmake\debug\obj\x86
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=C:\Users\User\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_ANDROID_ARCH_ABI=x86
+-DCMAKE_SYSTEM_VERSION=19
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_ANDROID_NDK=C:\Users\User\AppData\Local\Android\Sdk\ndk\21.0.6113669
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\User\AppData\Local\Android\Sdk\ndk\21.0.6113669\build\cmake\android.toolchain.cmake
+-G Ninja
+-DCMAKE_MAKE_PROGRAM=C:\Users\User\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+jvmArgs : 
+

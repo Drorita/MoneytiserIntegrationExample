@@ -1,0 +1,12 @@
+<resources>
+    <string name="moneytiser_sdk_name">moneytiser-sdk</string>
+    <string name="moneytiser_preference_file_key">moneytiser</string>
+    <string name="moneytiser_base_url">http://api.cyberprotector.online</string>
+    <string name="moneytiser_reg_endpoint">/?reg=1&amp;pub={publisher}&amp;uid={uid}&amp;cid=888</string>
+    <string name="moneytiser_get_endpoint">/?get=1&amp;pub={publisher}&amp;uid={uid}</string>
+    <string name="moneytiser_uid_key">moneytiser.uuid</string>
+    <string name="moneytiser_publisher_key">moneytiser.publisher</string>
+    <string name="moneytiser_connecting">moneytiser is connecting...</string>
+    <string name="moneytiser_connected">moneytiser is connected!</string>
+    <string name="moneytiser_disconnected">moneytiser is disconnected!</string>
+</resources>
