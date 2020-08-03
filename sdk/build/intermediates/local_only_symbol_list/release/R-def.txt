@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_android_notify
+string moneytiser_base_url
+string moneytiser_connected
+string moneytiser_connecting
+string moneytiser_disconnected
+string moneytiser_get_endpoint
+string moneytiser_preference_file_key
+string moneytiser_publisher_key
+string moneytiser_reg_endpoint
+string moneytiser_sdk_name
+string moneytiser_uid_key

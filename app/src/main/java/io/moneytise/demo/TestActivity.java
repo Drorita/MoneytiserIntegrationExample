@@ -2,8 +2,7 @@ package io.moneytise.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
+import androidx.appcompat.app.AppCompatActivity;
 import io.moneytise.Moneytiser;
 
 public class TestActivity extends Activity {

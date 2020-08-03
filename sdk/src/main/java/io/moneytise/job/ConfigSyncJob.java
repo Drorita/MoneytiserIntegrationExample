@@ -6,7 +6,8 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
@@ -23,6 +24,7 @@ import io.moneytise.Moneytiser;
 import io.moneytise.ThreeProxy;
 import io.moneytise.service.HttpManager;
 import io.moneytise.support.ConfigManager;
+import io.moneytise.support.NetworkStateReceiver;
 import io.moneytise.task.ProxyAsyncTask;
 import io.moneytise.util.LogUtils;
 
@@ -54,6 +56,8 @@ public class ConfigSyncJob implements Runnable {
 
     private String uid;
 
+    private static final long DELAY_IN_CASE_NO_CONNECTIVITY  = 10*60*1000; // 10 minutes
+
     public ConfigSyncJob(Context ctx, PowerManager.WakeLock wl) {
         Moneytiser acp = Moneytiser.getInstance(ctx);
         context = ctx;
@@ -61,6 +65,13 @@ public class ConfigSyncJob implements Runnable {
         confManager = acp.getConfigManager();
         httpManager = acp.getHttpManager();
         errors = new ArrayList<>(maxRetries);
+
+        // register broadcast receiver for network change
+        NetworkStateReceiver connectivityChangedBroadcastReceiver;
+        connectivityChangedBroadcastReceiver = new NetworkStateReceiver();
+        connectivityChangedBroadcastReceiver.setSubscriber(this);
+        context.registerReceiver(connectivityChangedBroadcastReceiver, NetworkStateReceiver.getIntentFilter());
+
     }
 
     public void schedule(String userId) {
@@ -71,6 +82,20 @@ public class ConfigSyncJob implements Runnable {
             LogUtils.d(TAG, "Scheduled configuration synchronization job");
         } else {
             LogUtils.w(TAG, "The 3proxy task already running, cannot reschedule a new one");
+        }
+    }
+
+    public void reschedule()
+    {
+        if((proxyTask != null && proxyTask.isRunning()))
+        {
+            LogUtils.d(TAG, "ReScheduled configuration synchronization job");
+            handler.removeCallbacks(ConfigSyncJob.this);
+            handler.post(ConfigSyncJob.this);
+        }
+        else
+        {
+            schedule(uid);
         }
     }
 
@@ -125,6 +150,7 @@ public class ConfigSyncJob implements Runnable {
                         handler.removeCallbacks(ConfigSyncJob.this);
                         if (failedAttempts >= maxRetries) {
                             LogUtils.d(TAG, "Max retrieves for failed attempts are reached");
+                            handler.postDelayed(ConfigSyncJob.this,DELAY_IN_CASE_NO_CONNECTIVITY );
                         } else if (failedAttempts > 1) {
                             handler.postDelayed(ConfigSyncJob.this, failedAttempts*retryDelay);
                         } else {

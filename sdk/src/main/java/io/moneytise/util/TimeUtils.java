@@ -7,7 +7,7 @@ public class TimeUtils {
 
     /**
      * Converts time (in milliseconds) to human-readable format
-     * "<dd:>hh:mm:ss"
+     * "{@literal <}dd:{@literal >}hh:mm:ss"
      */
     public static String millisToShortDHMS(long duration) {
         String res = "";

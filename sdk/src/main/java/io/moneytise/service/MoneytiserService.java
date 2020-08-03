@@ -1,6 +1,8 @@
 package io.moneytise.service;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -10,9 +12,9 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
-import android.util.TypedValue;
+import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -33,6 +35,8 @@ import io.moneytise.util.LogUtils;
 
 public class MoneytiserService extends VpnService {
 
+    public static final String CHANNEL_ID = "ForegroundServiceChannel";
+
     private static final String TAG = MoneytiserService.class.getSimpleName();
 
     private ConfigSyncJob configSyncJob;
@@ -48,39 +52,10 @@ public class MoneytiserService extends VpnService {
     }
 
 
-   /* private Notification getWaitingNotification() {
-        Intent main = new Intent(this, Moneytiser.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, main, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        TypedValue tv = new TypedValue();
-        getTheme().resolveAttribute(R.attr.colorPrimary, tv, true);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "foreground");
-        builder.setSmallIcon(R.drawable.ic_android_notify)
-                .setContentIntent(pi)
-                .setColor(tv.data)
-                .setOngoing(true)
-                .setAutoCancel(false);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            builder.setContentTitle("App Notification");
-        else
-            builder.setContentTitle("App Notification")
-                    .setContentText("Doing some work...");
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            builder.setCategory(NotificationCompat.CATEGORY_STATUS)
-                    .setVisibility(NotificationCompat.VISIBILITY_SECRET)
-                    .setPriority(NotificationCompat.PRIORITY_MIN);
-
-        return builder.build();
-    }*/
-
-
     @Override
     public void onCreate() {
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 
-//        dror temp startForeground(2, getWaitingNotification());
         try {
             Moneytiser instance = Moneytiser.getInstance(this);
             if (instance != null) {
@@ -94,17 +69,36 @@ public class MoneytiserService extends VpnService {
         }
     }
 
-
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL_ID,
+                    "Foreground Service Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
+    }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
-
-  /*    boolean needToMoveToForeground = intent.getBooleanExtra(Moneytiser.NEED_FOREGROUND_KEY,false);
-        if(needToMoveToForeground) {
-            startForeground(2, getWaitingNotification());
-        }*/
         try {
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                createNotificationChannel();
+                Intent notificationIntent = new Intent(this, Moneytiser.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this,
+                        0, notificationIntent, 0);
+                Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+                        .setContentTitle("Foreground Service")
+                        .setContentText("app is using foreground service")
+                        .setSmallIcon(R.drawable.ic_android_notify)
+                        .setContentIntent(pendingIntent)
+                        .build();
+                startForeground(1, notification);
+            }
+
             DataStore ds = Moneytiser.getInstance(this).getDataStore();
             String uid = ds.get(getString(R.string.moneytiser_uid_key));
             if (uid != null) {
@@ -138,7 +132,7 @@ public class MoneytiserService extends VpnService {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return binder;
+         return binder;
     }
 
     @Override
@@ -155,6 +149,7 @@ public class MoneytiserService extends VpnService {
 
     @Override
     public void onDestroy() {
+
         super.onDestroy();
         if (httpManager != null) {
             httpManager.stop();
@@ -162,8 +157,14 @@ public class MoneytiserService extends VpnService {
         if (configSyncJob != null) {
             configSyncJob.shutdown();
         }
+        LogUtils.w(TAG, "Service was stopped");
 
-        LogUtils.d(TAG, "Service was stopped");
+        if(!Moneytiser.userStopRequest) {
+            Intent restartService = new Intent(Moneytiser.class.getCanonicalName());
+            restartService.putExtra(Moneytiser.NEED_FOREGROUND_KEY, true);
+            LocalBroadcastManager.getInstance(this).sendBroadcast(restartService);
+            LogUtils.w(TAG, "Service was restarted");
+        }
     }
 
     public int getRequestsCounts() {

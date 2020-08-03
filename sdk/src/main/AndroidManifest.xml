@@ -4,7 +4,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />    
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!--uses-permission android:name="android.permission.FOREGROUND_SERVICE" /-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
 
     <application
         android:allowBackup="true"
@@ -29,7 +30,6 @@
         <receiver android:name=".support.NetworkStateReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
             </intent-filter>
         </receiver>
 

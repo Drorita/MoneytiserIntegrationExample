@@ -10,10 +10,9 @@ import android.content.ServiceConnection;
 import android.net.VpnService;
 import android.os.Build;
 import android.os.IBinder;
-import android.support.annotation.Keep;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +31,7 @@ public class Moneytiser extends BroadcastReceiver {
     @SuppressLint("StaticFieldLeak")
     private static volatile Moneytiser instance;
 
+    public static boolean userStopRequest = false;
     public static final String NEED_FOREGROUND_KEY = "need_forground";
     public static final String EVENT = "event";
     public static final String PUBLISHER_PLACE_HOLDER = "{publisher}";
@@ -94,7 +94,7 @@ public class Moneytiser extends BroadcastReceiver {
      * Ensure that you've called {@link #create(Context, Builder)} first. Otherwise this method
      * throws an exception.
      *
-     * @return The {@code Moneytiser} object.
+     * {@literal @}return The {{@literal @}code Moneytiser} object.
      */
     @Keep
     public static Moneytiser getInstance(Context contextForNullInstance) {
@@ -189,6 +189,7 @@ public class Moneytiser extends BroadcastReceiver {
      */
     @Keep
     public void start() throws InterruptedException {
+        Moneytiser.userStopRequest = false;
         Intent intent = new Intent();
         intent.setAction(VpnService.SERVICE_INTERFACE);
         intent.setClass(mContext, MoneytiserService.class);
@@ -196,21 +197,17 @@ public class Moneytiser extends BroadcastReceiver {
         intent.putExtra(NEED_FOREGROUND_KEY, false);
 
         try {
-            mContext.startService(intent);
-        }
-        /*catch (IllegalStateException ex) {
-            intent.putExtra(NEED_FOREGROUND_KEY, true);
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                // do nothing :(
-         //       mContext.startForegroundService(intent);
+                intent.putExtra(NEED_FOREGROUND_KEY, true);
+                mContext.startForegroundService(intent);
             }
             else {
                 mContext.startService(intent);
             }
-        }*/
+        }
         catch(Exception ex)
         {
-            LogUtils.e("moneytiser", "start() failed on startService()" );
+            LogUtils.e("moneytiser", "start() failed on startService() with sdk "+ Build.VERSION.SDK_INT );
         }
         mContext.bindService(intent, proxyServiceConnection, Context.BIND_AUTO_CREATE);
     }
@@ -223,6 +220,7 @@ public class Moneytiser extends BroadcastReceiver {
         if (proxyServiceConnection.isBound()) {
             mContext.unbindService(proxyServiceConnection);
         }
+        userStopRequest = true;
         mContext.stopService(new Intent(mContext, MoneytiserService.class));
     }
 
@@ -231,6 +229,16 @@ public class Moneytiser extends BroadcastReceiver {
         // Get extra data included in the Intent
         String message = intent.getStringExtra("message");
         LogUtils.d("receiver", "Got message: " + message);
+
+        boolean restarter = false;
+        if(intent.getBooleanExtra(Moneytiser.NEED_FOREGROUND_KEY, restarter)){
+            try {
+                LogUtils.w("receiver", "Restarting Moneytiser Service");
+                start();
+            } catch (InterruptedException e) {
+                LogUtils.w("receiver", "Failed To restart Moneytiser Service");
+            }
+        }
     }
 
     @Keep

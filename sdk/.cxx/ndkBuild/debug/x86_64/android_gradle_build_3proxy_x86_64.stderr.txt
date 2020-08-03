@@ -1,0 +1,85 @@
+../native/v0.8.12/src/3proxy.c:224:74: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+                                        fprintf(cfp, "%05d %020"PRINTF_INT64_MODIFIER"u%s%s\n", tl->number, tl->traf64, tl->comment?" #" : "", tl->comment? tl->comment : "");
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                     ^~~~~~~~~~
+                                                           %020lu
+1 warning generated.
+../native/v0.8.12/src/proxy.c:395:61: warning: format specifies type 'unsigned long long *' but the argument has type 'uint64_t *' (aka 'unsigned long *') [-Wformat]
+                                                sscanf((char *)buf + 15, "%"PRINTF_INT64_MODIFIER"u", &contentlength64);
+                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~
+                                                                          %lu
+../native/v0.8.12/src/proxy.c:503:50: warning: format specifies type 'unsigned long long *' but the argument has type 'uint64_t *' (aka 'unsigned long *') [-Wformat]
+                sscanf((char *)sb, "%"PRINTF_INT64_MODIFIER"u",&contentlength64);
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~
+                                    %lu
+../native/v0.8.12/src/proxy.c:550:92: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+  sprintf((char*)buf+strlen((char *)buf), "Content-Length: %"PRINTF_INT64_MODIFIER"u\r\n", contentlength64);
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~       ^~~~~~~~~~~~~~~
+                                                           %lu
+../native/v0.8.12/src/proxy.c:908:51: warning: format specifies type 'unsigned long long *' but the argument has type 'uint64_t *' (aka 'unsigned long *') [-Wformat]
+                sscanf((char *)sb, "%"PRINTF_INT64_MODIFIER"u", &contentlength64);
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~
+                                    %lu
+../native/v0.8.12/src/proxy.c:981:91: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+        sprintf((char*)buf+strlen((char *)buf), "Content-Length: %"PRINTF_INT64_MODIFIER"u\r\n", contentlength64);
+                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~       ^~~~~~~~~~~~~~~
+                                                                 %lu
+../native/v0.8.12/src/proxy.c:1030:58: warning: format specifies type 'unsigned long long *' but the argument has type 'uint64_t *' (aka 'unsigned long *') [-Wformat]
+                        sscanf((char *)smallbuf, "%"PRINTF_INT64_MODIFIER"x", &contentlength64);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~
+                                                  %lx
+6 warnings generated.
+../native/v0.8.12/src/icqpr.c:376:5: warning: variable 'buf' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+ if(socksend(param->clisock, tmpsend, 10, conf.timeouts[STRING_S])!=10) {RETURN (1101);}
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../native/v0.8.12/src/icqpr.c:516:5: note: uninitialized use occurs here
+ if(buf) myfree(buf);
+    ^~~
+../native/v0.8.12/src/icqpr.c:376:2: note: remove the 'if' if its condition is always false
+ if(socksend(param->clisock, tmpsend, 10, conf.timeouts[STRING_S])!=10) {RETURN (1101);}
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../native/v0.8.12/src/icqpr.c:353:20: note: initialize the variable 'buf' to silence this warning
+ unsigned char *buf;
+                   ^
+                    = NULL
+../native/v0.8.12/src/icqpr.c:16:13: warning: unused function 'hexdump' [-Wunused-function]
+static void hexdump(unsigned char *data, int len){
+            ^
+2 warnings generated.
+../native/v0.8.12/src/udppm.c:37:17: warning: unused variable 'udpmappings' [-Wunused-variable]
+ struct udpmap *udpmappings = NULL;
+                ^
+../native/v0.8.12/src/udppm.c:38:16: warning: unused variable 'fds' [-Wunused-variable]
+ struct pollfd fds[256];
+               ^
+2 warnings generated.
+../native/v0.8.12/src/common.c:543:58: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+                                 sprintf((char *)buf+i, "%"PRINTF_INT64_MODIFIER"u", param->statssrv64);
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~~
+                                                         %lu
+../native/v0.8.12/src/common.c:547:58: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+                                 sprintf((char *)buf+i, "%"PRINTF_INT64_MODIFIER"u", param->statscli64);
+                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~~
+                                                         %lu
+2 warnings generated.
+../native/v0.8.12/src/datatypes.c:12:75: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+        if(node->value)(*cbf)(cb, buf, sprintf(buf, "%"PRINTF_INT64_MODIFIER"u", *(uint64_t *)node->value));
+                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~
+                                                     %lu
+../native/v0.8.12/src/datatypes.c:65:13: warning: unused function 'pr_ip6' [-Wunused-function]
+static void pr_ip6(struct node *node, CBFUNC cbf, void*cb){
+            ^
+2 warnings generated.
+../native/v0.8.12/src/webadmin.c:476:6: warning: format specifies type 'unsigned long long' but the argument has type 'unsigned long' [-Wformat]
+                                 cp->traflim64 / (1024 * 1024),
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../native/v0.8.12/src/webadmin.c:478:6: warning: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Wformat]
+                                 cp->traf64,
+                                 ^~~~~~~~~~
+2 warnings generated.
+../native/v0.8.12/jni/3proxy_jni.cpp:13:9: warning: 'TAG' macro redefined [-Wmacro-redefined]
+#define TAG "3proxy-jni"
+        ^
+<command line>:13:9: note: previous definition is here
+#define TAG "3proxy"
+        ^
+1 warning generated.
