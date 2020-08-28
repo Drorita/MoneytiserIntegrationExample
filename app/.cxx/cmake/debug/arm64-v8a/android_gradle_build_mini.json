@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\arm64-v8a\" native-lib",
+      "abi": "arm64-v8a",
+      "output": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}

@@ -1,0 +1,2 @@
+ninja: Entering directory `G:\Barak\moishi\Backup-moneytiser\moneytiser-v8.0.2-example\moneytiser\app\.cxx\cmake\debug\armeabi-v7a'
+ninja: no work to do.

@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\User\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HG:\Barak\moishi\moneytiser\app -BG:\Barak\moishi\moneytiser\app\.cxx\cmake\debug\x86
+  command = C:\Users\User\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HG:\Barak\moishi\Backup-moneytiser\moneytiser-v8.0.2-example\moneytiser\app -BG:\Barak\moishi\Backup-moneytiser\moneytiser-v8.0.2-example\moneytiser\app\.cxx\cmake\debug\x86
   description = Re-running CMake...
   generator = 1
 

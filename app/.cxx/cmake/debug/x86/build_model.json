@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
-    "cmakeServerLogFile": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\x86\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cxx\\debug\\x86",
+    "cmakeArtifactsBaseFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
+    "cmakeServerLogFile": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\x86\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cxx\\debug\\x86",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,7 +15,7 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
+      "buildRoot": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
       "cmakeToolchain": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
       "cmakeExecutable": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
@@ -25,7 +25,7 @@
         },
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab\\x86\\prefab"
+          "value": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab\\x86\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -61,7 +61,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "G:\\Barak\\moishi\\moneytiser\\app\\build\\intermediates\\cmake\\debug\\obj\\x86"
+          "value": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\build\\intermediates\\cmake\\debug\\obj\\x86"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -78,14 +78,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
+  "cxxBuildFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
   "info": {
     "abi": "X86",
     "bitness": 32,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
+  "originalCxxBuildFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\x86",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -103,12 +103,12 @@
         "ninjaExe": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
       "cmakeToolchainFile": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx",
+      "cxxFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "G:\\Barak\\moishi\\moneytiser\\app\\build\\intermediates",
-      "makeFile": "G:\\Barak\\moishi\\moneytiser\\app\\CMakeLists.txt",
-      "moduleBuildFile": "G:\\Barak\\moishi\\moneytiser\\app\\build.gradle",
-      "moduleRootFolder": "G:\\Barak\\moishi\\moneytiser\\app",
+      "intermediatesFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\build\\intermediates",
+      "makeFile": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\CMakeLists.txt",
+      "moduleBuildFile": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\build.gradle",
+      "moduleRootFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -172,12 +172,12 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "21.0.6113669",
       "project": {
-        "compilerSettingsCacheFolder": "G:\\Barak\\moishi\\moneytiser\\.cxx",
-        "cxxFolder": "G:\\Barak\\moishi\\moneytiser\\.cxx",
+        "compilerSettingsCacheFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\.cxx",
+        "cxxFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "G:\\Barak\\moishi\\moneytiser",
+        "rootBuildGradleFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser",
         "sdkFolder": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk",
         "isPrefabEnabled": false
       },
@@ -194,7 +194,7 @@
         "SYSTEM": {}
       }
     },
-    "objFolder": "G:\\Barak\\moishi\\moneytiser\\app\\build\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\build\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -202,8 +202,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab",
+    "prefabDirectory": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "G:\\Barak\\moishi\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab\\x86"
+  "prefabFolder": "G:\\Barak\\moishi\\Backup-moneytiser\\moneytiser-v8.0.2-example\\moneytiser\\app\\.cxx\\cmake\\debug\\prefab\\x86"
 }

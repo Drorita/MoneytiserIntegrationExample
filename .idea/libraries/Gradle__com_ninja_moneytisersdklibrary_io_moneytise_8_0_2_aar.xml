@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ninja.moneytisersdklibrary:io.moneytise:8.0.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a3e7ee13e8bced3e2047f5044efa98/jetified-io.moneytise-8.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a3e7ee13e8bced3e2047f5044efa98/jetified-io.moneytise-8.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/21a3e7ee13e8bced3e2047f5044efa98/jetified-io.moneytise-8.0.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ninja.moneytisersdklibrary/io.moneytise/8.0.2/8625678e478cfd612546adb8b189525ec4cfedc9/io.moneytise-8.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ninja.moneytisersdklibrary/io.moneytise/8.0.2/965c75d287a17db487d175f80a3df8ed22bdfba6/io.moneytise-8.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import io.moneytise.Moneytiser;
-import io.moneytise.util.TimeUtils;
+//import io.moneytise.util.TimeUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,44 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-      //  startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
-      //  startActivity(new Intent(MainActivity.this, TestActivity.class));
-
-      //  final Moneytiser moneytiser = null;
         final Moneytiser moneytiser = new Moneytiser.Builder().withPublisher("dror").loggable().build(this);
-/*
-        // dror from here
-        try {
-            moneytiser.start();
-        }
-        catch(InterruptedException e)
-        {
-            e.printStackTrace();
-            // do nothing
-        }
-        stopButton.setEnabled(true);
-
-        startButton = findViewById(R.id.start_service_button);
-        startButton.setText(R.string.running);
-        startButton.setEnabled(false);
-    //    stopButton = findViewById(R.id.stop_service_button);
-        stopButton.setEnabled(true);
-        uptime();*/
-
-        // dror till here
-
-
-
-
         startButton = findViewById(R.id.start_service_button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    moneytiser.start();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            moneytiser.start();
                 startButton.setText(R.string.running);
                 startButton.setEnabled(false);
                 stopButton.setEnabled(true);
@@ -87,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         stopButton.setEnabled(false);
 
         String versionBuilder =
-                "SDK: v" + io.moneytise.BuildConfig.VERSION_NAME + "\n" +
+                "SDK: 8.0.2\n" +
                 "APP: v" + BuildConfig.VERSION_NAME + "\n";
         TextView version = findViewById(R.id.version);
         version.setText(versionBuilder);
@@ -110,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void refreshInfo() {
         uptimeUpdate();
-        Moneytiser acp = Moneytiser.getInstance(true);
+        Moneytiser acp = Moneytiser.getInstance(this);
         if (acp != null && acp.isRunning() && startButton.isEnabled()) {
             startButton.setText(R.string.running);
             startButton.setEnabled(false);
@@ -122,14 +90,12 @@ public class MainActivity extends AppCompatActivity {
         long upTime = 0;
         int requests = 0;
         int errors = 0;
-        Moneytiser acp = Moneytiser.getInstance(true);
+        Moneytiser acp = Moneytiser.getInstance(this);
         if (acp != null) {
             upTime = acp.getUpTime();
-            errors = acp.getErrors().size();
-            requests = acp.getRequestsCounts();
         }
         TextView tv = findViewById(R.id.sample_text);
-        tv.setText(String.format("%s\n[UpTime: %s]\nRequests: %s\nErrors: %s", stringFromJNI(), TimeUtils.millisToShortDHMS(upTime), requests, errors));
+        tv.setText(String.format("%s\n[UpTime: %s]\n", stringFromJNI(), TimeUtils.millisToShortDHMS(upTime)));
 
     }
 
